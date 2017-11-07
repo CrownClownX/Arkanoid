@@ -1,0 +1,5 @@
+﻿  Map.cpp
+d:\projekty\gitprojectmain\c++\arkanoid\source\map.cpp(51): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\projekty\gitprojectmain\c++\arkanoid\source\map.cpp(56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Debug\Araknoid.exe
+  Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Debug\Araknoid.pdb (Partial PDB)
