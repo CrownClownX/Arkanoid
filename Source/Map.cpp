@@ -5,7 +5,7 @@ Map::Map()
 	loadTexture();
 	buildTheMap();
 	buildTheBrick();
-	createBar();
+	createBarAndBall();
 }
 
 Map::~Map()
@@ -18,6 +18,7 @@ void Map::loadTexture()
 	texture.load(Textures::BACKGROUND, Const_Var::BACKGROUND_TEXTURE);
 	texture.load(Textures::NORMAL_BRICK, Const_Var::NORMAL_BRICK);
 	texture.load(Textures::BAR, Const_Var::BAR_TEXTURE);
+	texture.load(Textures::BALL, Const_Var::BALL_TEXTURE);
 }
 
 void Map::buildTheMap()
@@ -64,9 +65,10 @@ void Map::buildTheBrick()
 	file.close();
 }
 
-void Map::createBar()
+void Map::createBarAndBall()
 {
 	bar = std::make_unique<Bar>(texture.get(Textures::BAR));
+	ball = std::make_unique<Ball>(texture.get(Textures::BALL));
 }
 
 void Map::draw(sf::RenderWindow& window)
@@ -74,6 +76,7 @@ void Map::draw(sf::RenderWindow& window)
 	drawTiles(window);
 	drawBricks(window);
 	bar->draw(window);
+	ball->draw(window);
 }
 
 void Map::drawTiles(sf::RenderWindow & window)
@@ -125,8 +128,10 @@ void Map::drawBricks(sf::RenderWindow & window)
 	}
 }
 
-void Map::update()
+void Map::update(const float& deltaTime, const bool& isBallMoving)
 {
-	bar->update();
+	bar->update(deltaTime);
+	ball->update(deltaTime, bar->getBarPositionX());
+	ball->setIsMovingOn(isBallMoving);
 }
 

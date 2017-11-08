@@ -8,7 +8,7 @@ public:
 	Menu(sf::RenderWindow& tmpWindow);
 	~Menu();
 
-	void update();
+	void update(const float& deltaTime);
 	void eventHandler();
 	void draw();
 };

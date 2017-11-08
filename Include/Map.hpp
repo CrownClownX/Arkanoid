@@ -11,6 +11,7 @@
 #include "TextureHolder.hpp"
 #include "Const.h"
 #include "Bar.hpp"
+#include "Ball.hpp"
 
 class Map
 {
@@ -19,11 +20,12 @@ private:
 	std::vector<std::unique_ptr<Tile>> tiles;
 	std::vector<std::unique_ptr<Brick>> bricks;
 	std::unique_ptr<Bar> bar;
+	std::unique_ptr<Ball> ball;
 
 	void loadTexture();
 	void buildTheMap();
 	void buildTheBrick();
-	void createBar();
+	void createBarAndBall();
 
 	void drawTiles(sf::RenderWindow& window);
 	void drawBricks(sf::RenderWindow& window);
@@ -33,5 +35,5 @@ public:
 	~Map();
 
 	void draw(sf::RenderWindow& window);
-	void update();
+	void update(const float& deltaTime, const bool& isBallMoving);
 };

@@ -5,6 +5,8 @@
 
 
 namespace Const_Var {
+	
+	static const double MS_PER_FRAME = 1000.0 / 60.0;
 
 	static const sf::VideoMode WINDOW_SIZE(1280, 720);
 	static const std::string WINDOW_NAME = "Arkanoid";
@@ -27,6 +29,7 @@ namespace Const_Var {
 	static const std::string BRICK_MAP = "../../../Resource/BrickMap.txt";
 
 	static const std::string BAR_TEXTURE = "../../../Resource/Bar.png";
+	static const std::string BALL_TEXTURE = "../../../Resource/Ball.png";
 
 	enum enumState {
 		MENU, GAME

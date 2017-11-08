@@ -11,6 +11,6 @@ public:
 	GameState(sf::RenderWindow& tmpWindow);
 	virtual ~GameState();
 	virtual void draw() = 0;
-	virtual void update() = 0;
+	virtual void update(const float& deltaTime) = 0;
 	virtual void eventHandler() = 0;
 };

@@ -16,7 +16,6 @@ private:
 	GameState* currentState;
 
 	void display();
-	void update();
 public:
 	GameLoop();
 	~GameLoop();

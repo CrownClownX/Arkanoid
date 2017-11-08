@@ -7,11 +7,12 @@ class Game : public GameState
 {
 private:
 	Map map;
+	bool isRondStarted;
 public:
 	Game(sf::RenderWindow& window);
 	~Game();
 
-	void update();
+	void update(const float& deltaTime);
 	void eventHandler();
 	void draw();
 };

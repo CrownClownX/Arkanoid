@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Include\Ball.hpp" />
     <ClInclude Include="..\..\..\Include\Bar.hpp" />
     <ClInclude Include="..\..\..\Include\Brick.hpp" />
     <ClInclude Include="..\..\..\Include\Const.h" />
@@ -138,6 +139,7 @@
     <ClInclude Include="..\..\..\Include\Tile.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Ball.cpp" />
     <ClCompile Include="..\..\..\Source\Bar.cpp" />
     <ClCompile Include="..\..\..\Source\Brick.cpp" />
     <ClCompile Include="..\..\..\Source\Game.cpp" />

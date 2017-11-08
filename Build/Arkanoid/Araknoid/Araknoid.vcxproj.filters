@@ -58,7 +58,10 @@
       <Filter>Header Files\Level Map</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Include\Bar.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Level Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Ball.hpp">
+      <Filter>Header Files\Level Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -86,8 +89,11 @@
     <ClCompile Include="..\..\..\Source\Brick.cpp">
       <Filter>Source Files\Level Map</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Source\Ball.cpp">
+      <Filter>Source Files\Level Map</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\Source\Bar.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Level Map</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

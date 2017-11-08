@@ -27,7 +27,7 @@ void Menu::eventHandler()
 		window.close();
 }
 
-void Menu::update()
+void Menu::update(const float& deltaTime)
 {
 
 }

@@ -4,8 +4,10 @@ Bar::Bar(sf::Texture& texture)
 {
 	sprite.setTexture(texture);
 
-	location.x = 600.0f;
+	location.x = 560.0f;
 	location.y = 600.0f;
+
+	velocity = 120;
 }
 
 Bar::~Bar()
@@ -18,22 +20,22 @@ void Bar::draw(sf::RenderWindow& window)
 	window.draw(sprite);
 }
 
-void Bar::update()
+void Bar::update(const float& deltaTime)
 {
 	int mousePositionX = sf::Mouse::getPosition().x;
 
 	if (mousePositionX < (location.x + Const_Var::BAR_WIDTH))
-		moveLeft();
+		moveLeft(deltaTime);
 	else if (mousePositionX > (location.x + 2*Const_Var::BAR_WIDTH) )
-		moveRight();
+		moveRight(deltaTime);
 }
 
-void Bar::moveRight()
+void Bar::moveRight(const float& deltaTime)
 {
-	location.x += 2;
+	location.x += velocity*deltaTime;
 }
 
-void Bar::moveLeft()
+void Bar::moveLeft(const float& deltaTime)
 {
-	location.x -= 2;
+	location.x -= velocity*deltaTime;
 }

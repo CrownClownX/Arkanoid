@@ -1,8 +1,3 @@
-﻿  Bar.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Map.cpp
-  GameLoop.cpp
-  Game.cpp
+﻿  Ball.cpp
   Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Debug\Araknoid.exe
   Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Debug\Araknoid.pdb (Partial PDB)
