@@ -36,6 +36,7 @@ void GameLoop::display()
 
 void GameLoop::update()
 {
+	currentState->update();
 }
 
 int main()

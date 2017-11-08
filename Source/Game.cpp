@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game(sf::RenderWindow& window) :GameState(window), isMapSettled(false)
+Game::Game(sf::RenderWindow& window) :GameState(window)
 {
 
 }
@@ -12,8 +12,7 @@ Game::~Game()
 
 void Game::draw()
 {
-	if(isMapSettled == false)
-		map.draw(window);
+	map.draw(window);
 }
 
 void Game::eventHandler()
@@ -30,5 +29,5 @@ void Game::eventHandler()
 
 void Game::update()
 {
-
+	map.update();
 }

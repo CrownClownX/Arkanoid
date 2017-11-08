@@ -6,7 +6,6 @@
 class Game : public GameState
 {
 private:
-	bool isMapSettled;
 	Map map;
 public:
 	Game(sf::RenderWindow& window);

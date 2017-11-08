@@ -54,6 +54,12 @@
     <ClInclude Include="..\..\..\Include\Const.h">
       <Filter>Header Files\Const Data</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Include\Brick.hpp">
+      <Filter>Header Files\Level Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\Bar.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\GameLoop.cpp">
@@ -76,6 +82,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Map.cpp">
       <Filter>Source Files\Level Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Brick.cpp">
+      <Filter>Source Files\Level Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Bar.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
