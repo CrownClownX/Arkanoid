@@ -128,10 +128,35 @@ void Map::drawBricks(sf::RenderWindow & window)
 	}
 }
 
+bool Map::checkCollision()
+{
+	bool isColliding;
+	for (auto && iterator : tiles)
+	{
+		if(!iterator->getIsMovable())
+			isColliding = collision.checkCollison(*ball, *iterator);
+
+		if (isColliding)
+			return true;
+	}
+
+	for (auto&& iterator : bricks)
+	{
+		isColliding = collision.checkCollison(*ball, *iterator);
+
+		if (isColliding)
+			return true;
+	}
+
+	return false;
+}
+
 void Map::update(const float& deltaTime, const bool& isBallMoving)
 {
 	bar->update(deltaTime);
-	ball->update(deltaTime, bar->getBarPositionX());
-	ball->setIsMovingOn(isBallMoving);
+	if (isBallMoving == false)
+		ball->update(deltaTime, bar->getBarPositionX());
+	else
+		ball->update(deltaTime, checkCollision());
 }
 

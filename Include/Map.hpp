@@ -12,10 +12,12 @@
 #include "Const.h"
 #include "Bar.hpp"
 #include "Ball.hpp"
+#include "CollisionManager.hpp"
 
 class Map
 {
 private:
+	CollisionManager collision;
 	TextureHolder texture;
 	std::vector<std::unique_ptr<Tile>> tiles;
 	std::vector<std::unique_ptr<Brick>> bricks;
@@ -30,6 +32,7 @@ private:
 	void drawTiles(sf::RenderWindow& window);
 	void drawBricks(sf::RenderWindow& window);
 
+	bool checkCollision();
 public:
 	Map();
 	~Map();

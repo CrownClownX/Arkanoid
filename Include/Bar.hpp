@@ -3,11 +3,11 @@
 #include <SFML\Graphics.hpp>
 
 #include "Const.h"
+#include "Collider.hpp"
 
-class Bar
+class Bar: public Collider
 {
 private:
-	sf::Sprite sprite;
 	sf::Vector2f location;
 	float velocity;
 

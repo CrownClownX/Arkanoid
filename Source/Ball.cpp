@@ -1,8 +1,7 @@
 #include "..\Include\Ball.hpp"
 
-Ball::Ball(sf::Texture & texture): isMoving(false), velocity(240)
+Ball::Ball(sf::Texture & texture): Collider(texture), velocity(240), collisonChecker(false)
 {
-	sprite.setTexture(texture);
 	location.x = 630.0f;
 	location.y = 580.0f;
 }
@@ -13,9 +12,16 @@ Ball::~Ball()
 
 void Ball::update(const float& deltaTime, const float& barPosition)
 {
-	if (isMoving == false)
 		moveOnBar(barPosition);
-	else
+}
+
+void Ball::update(const float& deltaTime, const bool& isColliding)
+{
+	if(collisonChecker)
+	{ }
+	else if (isColliding)
+		collisonChecker = true;
+	else if (!isColliding)
 		move(deltaTime);
 }
 

@@ -1,6 +1,6 @@
 #include "Game.h"
 
-Game::Game(sf::RenderWindow& window) :GameState(window), isRondStarted(false)
+Game::Game(sf::RenderWindow& window) :GameState(window), isRoundStarted(false)
 {
 
 }
@@ -22,7 +22,7 @@ void Game::eventHandler()
 		if (event.type == sf::Event::Closed)
 			window.close();
 		else if (event.type == sf::Event::MouseButtonPressed)
-			isRondStarted = true;
+			isRoundStarted = true;
 	}
 
 	if (event.key.code == sf::Keyboard::Escape)
@@ -31,5 +31,5 @@ void Game::eventHandler()
 
 void Game::update(const float& deltaTime)
 {
-	map.update(deltaTime, isRondStarted);
+	map.update(deltaTime, isRoundStarted);
 }

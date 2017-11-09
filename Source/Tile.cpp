@@ -1,8 +1,8 @@
 #include "..\Include\Tile.hpp"
 
-Tile::Tile(bool tmpMovable, const  sf::Texture& texture):isMovable(tmpMovable)
+Tile::Tile(bool tmpMovable, const  sf::Texture& texture):Collider(texture, tmpMovable)
 {
-	sprite.setTexture(texture);
+
 }
 
 Tile::~Tile()

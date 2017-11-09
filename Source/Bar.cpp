@@ -1,9 +1,7 @@
 #include "Bar.hpp"
 
-Bar::Bar(sf::Texture& texture)
+Bar::Bar(sf::Texture& texture):Collider(texture)
 {
-	sprite.setTexture(texture);
-
 	location.x = 560.0f;
 	location.y = 600.0f;
 

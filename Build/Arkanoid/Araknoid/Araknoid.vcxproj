@@ -129,6 +129,8 @@
     <ClInclude Include="..\..\..\Include\Ball.hpp" />
     <ClInclude Include="..\..\..\Include\Bar.hpp" />
     <ClInclude Include="..\..\..\Include\Brick.hpp" />
+    <ClInclude Include="..\..\..\Include\Collider.hpp" />
+    <ClInclude Include="..\..\..\Include\CollisionManager.hpp" />
     <ClInclude Include="..\..\..\Include\Const.h" />
     <ClInclude Include="..\..\..\Include\Game.h" />
     <ClInclude Include="..\..\..\Include\GameLoop.h" />
@@ -142,6 +144,8 @@
     <ClCompile Include="..\..\..\Source\Ball.cpp" />
     <ClCompile Include="..\..\..\Source\Bar.cpp" />
     <ClCompile Include="..\..\..\Source\Brick.cpp" />
+    <ClCompile Include="..\..\..\Source\Collider.cpp" />
+    <ClCompile Include="..\..\..\Source\CollisionManager.cpp" />
     <ClCompile Include="..\..\..\Source\Game.cpp" />
     <ClCompile Include="..\..\..\Source\GameLoop.cpp" />
     <ClCompile Include="..\..\..\Source\GameState.cpp" />

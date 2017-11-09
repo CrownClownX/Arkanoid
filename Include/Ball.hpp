@@ -1,13 +1,13 @@
 #pragma once
 
 #include <SFML\Graphics.hpp>
+#include "Collider.hpp"
 
-class Ball
+class Ball: public Collider
 {
 private:
-	sf::Sprite sprite;
 	sf::Vector2f location;
-	bool isMoving;
+	bool collisonChecker;
 	float velocity;
 
 	void moveOnBar(const float& barPosition);
@@ -18,7 +18,7 @@ public:
 	~Ball();
 
 	void update(const float& deltaTime, const float& barPosition);
-	void draw(sf::RenderWindow& window);
+	void Ball::update(const float& deltaTime, const bool& isColliding);
 
-	void setIsMovingOn(const bool& isBallMoving) { isMoving = isBallMoving; }
+	void draw(sf::RenderWindow& window);
 };

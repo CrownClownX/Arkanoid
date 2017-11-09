@@ -3,14 +3,11 @@
 #include <SFML\Graphics.hpp>
 
 #include "Const.h"
+#include "Collider.hpp"
 
 
-class Tile
+class Tile : public Collider
 {
-private:
-	bool isMovable;
-	sf::Sprite sprite;
-
 public:
 	Tile(bool tmpMovable, const sf::Texture& texture);
 	~Tile();

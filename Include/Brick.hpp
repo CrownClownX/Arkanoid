@@ -3,12 +3,12 @@
 #include <SFML\Graphics.hpp>
 
 #include "Const.h"
+#include "Collider.hpp"
 
-class Brick
+class Brick: public Collider
 {
 private:
 	bool isDestructed; 
-	sf::Sprite sprite;
 
 public:
 	Brick(const sf::Texture& texture);

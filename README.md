@@ -4,7 +4,7 @@
 
 In this moment, I work on following problems:
 <ul>
-	<li>Make class to manage collisions</li>
+	<li>Make class to manage bouncing of the ball</li>
 </ul>
 </br>
 

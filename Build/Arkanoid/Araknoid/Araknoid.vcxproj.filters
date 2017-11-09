@@ -63,6 +63,12 @@
     <ClInclude Include="..\..\..\Include\Ball.hpp">
       <Filter>Header Files\Level Map</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Include\Collider.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Include\CollisionManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\GameLoop.cpp">
@@ -94,6 +100,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Bar.cpp">
       <Filter>Source Files\Level Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Collider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\CollisionManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

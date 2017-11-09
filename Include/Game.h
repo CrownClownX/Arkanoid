@@ -7,7 +7,7 @@ class Game : public GameState
 {
 private:
 	Map map;
-	bool isRondStarted;
+	bool isRoundStarted;
 public:
 	Game(sf::RenderWindow& window);
 	~Game();

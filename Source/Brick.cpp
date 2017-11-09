@@ -1,8 +1,7 @@
 #include "Brick.hpp"
 
-Brick::Brick(const sf::Texture& texture): isDestructed(false)
+Brick::Brick(const sf::Texture& texture):Collider(texture), isDestructed(false)
 {
-	sprite.setTexture(texture);
 }
 
 Brick::~Brick()
