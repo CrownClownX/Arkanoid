@@ -3,6 +3,7 @@
 #include <map>
 #include <memory>
 #include <vector>
+#include <list>
 #include <fstream>
 #include <iostream>
 
@@ -20,7 +21,7 @@ private:
 	CollisionManager collision;
 	TextureHolder texture;
 	std::vector<std::unique_ptr<Tile>> tiles;
-	std::vector<std::unique_ptr<Brick>> bricks;
+	std::list<std::unique_ptr<Brick>> bricks;
 	std::unique_ptr<Bar> bar;
 	std::unique_ptr<Ball> ball;
 
@@ -29,10 +30,10 @@ private:
 	void buildTheBrick();
 	void createBarAndBall();
 
-	void drawTiles(sf::RenderWindow& window);
-	void drawBricks(sf::RenderWindow& window);
+	void drawTiles();
+	void drawBricks();
 
-	bool checkCollision();
+	sf::Vector2f checkCollision();
 public:
 	Map();
 	~Map();

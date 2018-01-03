@@ -21,5 +21,5 @@ public:
 	void draw(sf::RenderWindow& window);
 	void update(const float& deltaTime);
 
-	float getBarPositionX() { return sprite.getPosition().x; };
+	float getBarPositionX() { return sprite->getPosition().x; };
 };

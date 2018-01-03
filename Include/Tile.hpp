@@ -12,5 +12,6 @@ public:
 	Tile(bool tmpMovable, const sf::Texture& texture);
 	~Tile();
 
-	void draw(const sf::Vector2f& location, sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window);
+	void setLocation(const sf::Vector2f& location) { sprite->setPosition(location); }
 };

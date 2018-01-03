@@ -7,14 +7,12 @@
 
 class Brick: public Collider
 {
-private:
-	bool isDestructed; 
 
 public:
 	Brick(const sf::Texture& texture);
 	~Brick();
 
-	void draw(const sf::Vector2f& location, sf::RenderWindow& window);
-	void destruction() { isDestructed = false; }
+	void draw(sf::RenderWindow& window);
+	void setLocation(const sf::Vector2f& location) { sprite->setPosition(location); }
 };
 

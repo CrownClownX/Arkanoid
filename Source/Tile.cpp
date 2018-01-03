@@ -9,10 +9,9 @@ Tile::~Tile()
 {
 }
 
-void Tile::draw(const sf::Vector2f & location, sf::RenderWindow& window)
+void Tile::draw(sf::RenderWindow& window)
 {
-	sprite.setPosition(location);
-	window.draw(sprite);
+	window.draw(*sprite);
 }
 
 

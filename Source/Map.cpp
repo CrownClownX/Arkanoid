@@ -6,6 +6,9 @@ Map::Map()
 	buildTheMap();
 	buildTheBrick();
 	createBarAndBall();
+
+	drawBricks();
+	drawTiles();
 }
 
 Map::~Map()
@@ -73,13 +76,17 @@ void Map::createBarAndBall()
 
 void Map::draw(sf::RenderWindow& window)
 {
-	drawTiles(window);
-	drawBricks(window);
+	for (auto&& iterator : tiles)
+		iterator->draw(window);
+
+	for (auto&& iterator : bricks)
+		iterator->draw(window);
+
 	bar->draw(window);
 	ball->draw(window);
 }
 
-void Map::drawTiles(sf::RenderWindow & window)
+void Map::drawTiles()
 {
 	sf::Vector2f location(0.0f, 0.0f);
 
@@ -88,7 +95,7 @@ void Map::drawTiles(sf::RenderWindow & window)
 
 	for (auto&& iterator : tiles)
 	{
-		iterator->draw(location, window);
+		iterator->setLocation(location);
 		location.x = countingX * 40.0f;
 
 		if (countingX == 32)
@@ -104,7 +111,7 @@ void Map::drawTiles(sf::RenderWindow & window)
 	}
 }
 
-void Map::drawBricks(sf::RenderWindow & window)
+void Map::drawBricks()
 {
 	sf::Vector2f location(120.0f, 120.0f);
 
@@ -113,7 +120,7 @@ void Map::drawBricks(sf::RenderWindow & window)
 
 	for (auto&& iterator : bricks)
 	{
-		iterator->draw(location, window);
+		iterator->setLocation(location);
 		location.x = countingX * 80.0f + 120.0f;
 
 		if (countingX == 13)
@@ -128,16 +135,16 @@ void Map::drawBricks(sf::RenderWindow & window)
 	}
 }
 
-bool Map::checkCollision()
+sf::Vector2f Map::checkCollision()
 {
-	bool isColliding;
+	bool isColliding = false;
 	for (auto && iterator : tiles)
 	{
 		if(!iterator->getIsMovable())
 			isColliding = collision.checkCollison(*ball, *iterator);
 
 		if (isColliding)
-			return true;
+			return collision.getNewVector(*ball, *iterator);
 	}
 
 	for (auto&& iterator : bricks)
@@ -145,18 +152,30 @@ bool Map::checkCollision()
 		isColliding = collision.checkCollison(*ball, *iterator);
 
 		if (isColliding)
-			return true;
+		{
+			sf::Vector2f newVector = collision.getNewVector(*ball, *iterator);
+			bricks.remove(iterator);
+			
+			return newVector;
+		}
 	}
 
-	return false;
+	return sf::Vector2f(1,1);
 }
 
 void Map::update(const float& deltaTime, const bool& isBallMoving)
 {
 	bar->update(deltaTime);
-	if (isBallMoving == false)
+
+	if (isBallMoving == false) 
 		ball->update(deltaTime, bar->getBarPositionX());
 	else
-		ball->update(deltaTime, checkCollision());
+	{
+		if (collision.checkCollison(*ball, *bar))
+			ball->update(deltaTime, collision.getBarVector(*ball, *bar), true);
+		else
+			ball->update(deltaTime, checkCollision(), false);
+	}
+	
 }
 

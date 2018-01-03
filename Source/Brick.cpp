@@ -1,6 +1,6 @@
 #include "Brick.hpp"
 
-Brick::Brick(const sf::Texture& texture):Collider(texture), isDestructed(false)
+Brick::Brick(const sf::Texture& texture):Collider(texture)
 {
 }
 
@@ -8,11 +8,7 @@ Brick::~Brick()
 {
 }
 
-void Brick::draw(const sf::Vector2f& location, sf::RenderWindow& window)
+void Brick::draw(sf::RenderWindow& window)
 {
-	if (isDestructed == false)
-	{
-		sprite.setPosition(location);
-		window.draw(sprite);
-	}
+	window.draw(*sprite);
 }

@@ -1,0 +1,26 @@
+﻿  Ball.cpp
+  Bar.cpp
+  Brick.cpp
+  Collider.cpp
+D:\New Folder\Nowy folder\VC\include\memory(1630): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ..\..\..\Source\Collider.cpp(22): note: see reference to function template instantiation 'std::unique_ptr<sf::CircleShape,std::default_delete<_Ty>> std::make_unique<sf::CircleShape,int>(int &&)' being compiled
+          with
+          [
+              _Ty=sf::CircleShape
+          ]
+  CollisionManager.cpp
+..\..\..\Source\CollisionManager.cpp(28): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+..\..\..\Source\CollisionManager.cpp(29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Game.cpp
+  GameLoop.cpp
+  GameState.cpp
+  Map.cpp
+  Menu.cpp
+  TextureHolder.cpp
+  Tile.cpp
+  Generating code
+d:\projekty\gitprojectmain\c++\arkanoid\source\collisionmanager.cpp(20): warning C4715: 'CollisionManager::checkCollison': not all control paths return a value
+  All 1008 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Release\Araknoid.exe
+  Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Release\Araknoid.pdb (Full PDB)
