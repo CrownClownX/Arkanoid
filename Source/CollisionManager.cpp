@@ -4,67 +4,68 @@ CollisionManager::CollisionManager()
 {
 }
 
+CollisionManager & CollisionManager::get()
+{
+    static CollisionManager singleton;
+    return singleton;
+}
+
 CollisionManager::~CollisionManager()
 {
 }
 
-bool CollisionManager::checkCollison(const Collider& ball, const Collider& someObject)
+bool CollisionManager::checkCollison(const sf::FloatRect& ball, const sf::FloatRect& someObject)
 {
-	sf::FloatRect ballRect = ball.getSpriteRectangle();
-	sf::FloatRect objectRect = someObject.getSpriteRectangle();
+    if (someObject.intersects(ball))
+        return true;
 
-	if (objectRect.intersects(ballRect))
-		return true;
-	else
-		false;
+    return false;
 }
 
-sf::Vector2f CollisionManager::getNewVector(const Collider & ball, const Collider & someObject)
+sf::Vector2f CollisionManager::getNewVector(const sf::FloatRect & ball, const sf::FloatRect & someObject)
 {
-	sf::Vector2f newVector(1.0f, 1.0f);
-	sf::FloatRect ballRect = ball.getSpriteRectangle();
-	sf::FloatRect object = someObject.getSpriteRectangle();
+    sf::Vector2f newVector(1.0f, 1.0f);
     
-	int width = object.width;
-	int height = object.height;
+    int width = someObject.width;
+    int height = someObject.height;
 
-	if (object.left > ballRect.left)
-		newVector.x = -1.0f;
-	else if (ballRect.top > object.top)
-		newVector.y = -1.0f;
-	else if (object.left < ballRect.left)
-		newVector.x = -1.0f;
-	else if (ballRect.top < object.top)
-		newVector.y = -1.0f;
+    if (someObject.left > ball.left)
+        newVector.x = -1.0f;
+    else if (ball.top > someObject.top)
+        newVector.y = -1.0f;
+    else if (someObject.left < ball.left)
+        newVector.x = -1.0f;
+    else if (ball.top < someObject.top)
+        newVector.y = -1.0f;
 
-	return newVector;
+    return newVector;
 }
 
-sf::Vector2f CollisionManager::getBarVector(const Collider & ball, const Collider & bar)
+sf::Vector2f CollisionManager::getBarVector(const sf::FloatRect & ball, const sf::FloatRect & bar)
 {
-	float ballMiddle = ball.getSpriteRectangle().left + (ball.getSpriteRectangle().width/2) ;
-	float barMiddle = bar.getSpriteRectangle().left + (bar.getSpriteRectangle().width / 2);
-	float barWidth = bar.getSpriteRectangle().width/2;
-	
-	sf::Vector2f newVector(1, 1);
+    float ballMiddle = ball.left + (ball.width/2) ;
+    float barMiddle = bar.left + (bar.width / 2);
+    float barWidth = bar.width/2;
+    
+    sf::Vector2f newVector(1, 1);
 
-	if ((ballMiddle < barWidth + 20) && (ballMiddle > barWidth - 20))
-		return sf::Vector2f(0, -1);
-	else if (ballMiddle > barMiddle)
-	{
-		newVector.x = abs(barMiddle - ballMiddle)/barWidth;
-		newVector.y -= newVector.x;
-		newVector.y *= (-1);
-		return newVector;
-	}
-	else if (ballMiddle < barMiddle)
-	{
-		newVector.x = abs(barMiddle - ballMiddle) / barWidth;
-		newVector.y -= newVector.x;
-		newVector.y *= (-1);
-		newVector.x *= (-1);
-		return newVector;
-	}
+    if ((ballMiddle < barWidth + 20) && (ballMiddle > barWidth - 20))
+        return sf::Vector2f(0, -1);
+    else if (ballMiddle > barMiddle)
+    {
+        newVector.x = abs(barMiddle - ballMiddle)/barWidth;
+        newVector.y -= newVector.x;
+        newVector.y *= (-1);
+        return newVector;
+    }
+    else if (ballMiddle < barMiddle)
+    {
+        newVector.x = abs(barMiddle - ballMiddle) / barWidth;
+        newVector.y -= newVector.x;
+        newVector.y *= (-1);
+        newVector.x *= (-1);
+        return newVector;
+    }
 
-	return sf::Vector2f(1, 1);
+    return sf::Vector2f(1, 1);
 }

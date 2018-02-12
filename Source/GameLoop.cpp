@@ -1,20 +1,17 @@
 #include "GameLoop.h"
 
-GameLoop::GameLoop() : currentState(nullptr)
+GameLoop::GameLoop() : currentState(Const_Var::GAME)
 {
 	window.create(Const_Var::WINDOW_SIZE, Const_Var::WINDOW_NAME);
 	window.setFramerateLimit(60);
 
-	state[Const_Var::enumState::MENU] = new Menu(window);
-	state[Const_Var::enumState::GAME] = new Game(window);
+	state[Const_Var::enumState::MENU] = std::make_unique<Menu>(window);
+	state[Const_Var::enumState::GAME] = std::make_unique<Game>(window);
 
-	currentState = state[Const_Var::enumState::GAME];
 }
 
 GameLoop::~GameLoop()
 {
-	delete state[Const_Var::enumState::MENU];
-	delete state[Const_Var::enumState::GAME];
 }
 
 void GameLoop::startGameLoop()
@@ -25,8 +22,9 @@ void GameLoop::startGameLoop()
 	{
 		sf::Time elapsed = clock.restart();
 		float deltaTime = elapsed.asSeconds();
-		currentState->eventHandler();
-		currentState->update(deltaTime);
+
+		state[currentState]->eventHandler();
+		state[currentState]->update(deltaTime);
 		display();
 	}
 }
@@ -34,7 +32,7 @@ void GameLoop::startGameLoop()
 void GameLoop::display()
 {
 	window.clear();
-	currentState->draw();
+	state[currentState]->draw();
 	window.display();
 }
 

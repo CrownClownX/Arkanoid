@@ -3,23 +3,26 @@
 #include <SFML\Graphics.hpp>
 
 #include "Const.h"
-#include "Collider.hpp"
+#include "CollisionManager.hpp"
 
-class Bar: public Collider
+class Bar: public sf::Drawable
 {
 private:
-	sf::Vector2f location;
+	sf::Texture& texture;
+	sf::RectangleShape sprite;
 	float velocity;
 
-	void moveRight(const float& deltaTime);
-	void moveLeft(const float& deltaTime);
+	void moveRight(const float& deltaTime, float& location);
+	void moveLeft(const float& deltaTime, float& location);
+
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
-	Bar(sf::Texture& texture);
+	Bar(sf::Texture& texture, const sf::FloatRect& textureData);
 	~Bar();
 
-	void draw(sf::RenderWindow& window);
 	void update(const float& deltaTime);
+	float getBarPositionX() { return sprite.getPosition().x; };
+	sf::FloatRect getBarRect() const { return sprite.getGlobalBounds(); };
 
-	float getBarPositionX() { return sprite->getPosition().x; };
 };

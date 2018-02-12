@@ -1,39 +1,45 @@
 #include "Bar.hpp"
 
-Bar::Bar(sf::Texture& texture):Collider(texture, sf::Vector2f(160, 20))
+Bar::Bar(sf::Texture& texture, const sf::FloatRect& textureData) : texture(texture), velocity(450.0f),
 {
-	location.x = 560.0f;
-	location.y = 600.0f;
+	sf::Vector2f size(Const_Var::BAR_DATA.width, Const_Var::BAR_DATA.height);
+	sf::Vector2f location(Const_Var::BAR_DATA.left, Const_Var::BAR_DATA.top);
 
-	velocity = 450.0f;
+	sprite.setSize(size);
+	sprite.setPosition(location);
+	sprite.setTexture(&texture);
+	sprite.setTextureRect((sf::IntRect)textureData);
 }
 
 Bar::~Bar()
 {
 }
 
-void Bar::draw(sf::RenderWindow& window)
-{
-	sprite->setPosition(location);
-	window.draw(*sprite);
-}
-
 void Bar::update(const float& deltaTime)
 {
 	int mousePositionX = sf::Mouse::getPosition().x;
+	float location = sprite.getPosition().x;
 
-	if (mousePositionX < (location.x + Const_Var::BAR_WIDTH) && sprite->getPosition().x > 40)
-		moveLeft(deltaTime);
-	else if (mousePositionX > (location.x + 2 * Const_Var::BAR_WIDTH) && sprite->getPosition().x < (1240 - Const_Var::BAR_WIDTH))
-		moveRight(deltaTime);
+	if (mousePositionX < (location + Const_Var::BAR_DATA.width) && location > 40)
+		moveLeft(deltaTime, location);
+	else if (mousePositionX > (location + 2 * Const_Var::BAR_DATA.width) && location < (1240 - Const_Var::BAR_DATA.width))
+		moveRight(deltaTime, location);
+
+	sprite.setPosition(location, sprite.getPosition().y);
 }
 
-void Bar::moveRight(const float& deltaTime)
+void Bar::moveRight(const float& deltaTime, float& location)
 {
-	location.x += velocity*deltaTime;
+	location += velocity*deltaTime;
 }
 
-void Bar::moveLeft(const float& deltaTime)
+void Bar::moveLeft(const float& deltaTime, float& location)
 {
-	location.x -= velocity*deltaTime;
+	location -= velocity*deltaTime;
 }
+
+void Bar::draw(sf::RenderTarget & target, sf::RenderStates states) const
+{
+	target.draw(sprite);
+}
+

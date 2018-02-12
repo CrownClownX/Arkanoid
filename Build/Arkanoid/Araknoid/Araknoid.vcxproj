@@ -74,10 +74,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Include;D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GIT\Arkanoid\Include;D:\GIT\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\GIT\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -86,10 +86,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Include;D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GIT\Arkanoid\Include;D:\GIT\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\GIT\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -100,12 +100,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Include;D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GIT\Arkanoid\Include;D:\GIT\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\GIT\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -116,12 +116,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Include;D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\GIT\Arkanoid\Include;D:\GIT\Arkanoid\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>D:\Projekty\GitProjectMain\C++\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\GIT\Arkanoid\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -129,7 +129,6 @@
     <ClInclude Include="..\..\..\Include\Ball.hpp" />
     <ClInclude Include="..\..\..\Include\Bar.hpp" />
     <ClInclude Include="..\..\..\Include\Brick.hpp" />
-    <ClInclude Include="..\..\..\Include\Collider.hpp" />
     <ClInclude Include="..\..\..\Include\CollisionManager.hpp" />
     <ClInclude Include="..\..\..\Include\Const.h" />
     <ClInclude Include="..\..\..\Include\Game.h" />
@@ -138,13 +137,11 @@
     <ClInclude Include="..\..\..\Include\Map.hpp" />
     <ClInclude Include="..\..\..\Include\Menu.h" />
     <ClInclude Include="..\..\..\Include\TextureHolder.hpp" />
-    <ClInclude Include="..\..\..\Include\Tile.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Source\Ball.cpp" />
     <ClCompile Include="..\..\..\Source\Bar.cpp" />
     <ClCompile Include="..\..\..\Source\Brick.cpp" />
-    <ClCompile Include="..\..\..\Source\Collider.cpp" />
     <ClCompile Include="..\..\..\Source\CollisionManager.cpp" />
     <ClCompile Include="..\..\..\Source\Game.cpp" />
     <ClCompile Include="..\..\..\Source\GameLoop.cpp" />
@@ -152,7 +149,6 @@
     <ClCompile Include="..\..\..\Source\Map.cpp" />
     <ClCompile Include="..\..\..\Source\Menu.cpp" />
     <ClCompile Include="..\..\..\Source\TextureHolder.cpp" />
-    <ClCompile Include="..\..\..\Source\Tile.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

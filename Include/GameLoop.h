@@ -12,8 +12,8 @@ class GameLoop
 {
 private:
 	sf::RenderWindow window;
-	std::map<Const_Var::enumState, GameState*> state;
-	GameState* currentState;
+	std::map<Const_Var::enumState, std::unique_ptr<GameState>> state;
+	Const_Var::enumState currentState;
 
 	void display();
 public:

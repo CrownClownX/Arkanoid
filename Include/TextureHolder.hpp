@@ -5,16 +5,21 @@
 #include <SFML\Graphics.hpp>
 
 #include "Const.h"
+#include <iostream>
 
 class TextureHolder
 {
 private:
-	std::map<Textures::ID, std::unique_ptr<sf::Texture>> textureMap;
+	std::map<Textures::ID, sf::FloatRect> textureMap;
+	sf::Texture texture;
+
+	void setCategory();
+
 public:
-	TextureHolder();
+	TextureHolder(const std::string & filename);
 	~TextureHolder();
 
-	void load(Textures::ID id, const std::string& filename);
-	sf::Texture& get(Textures::ID id);
-	const sf::Texture& get(Textures::ID id) const;
+	bool load(const std::string& filename);
+	sf::Texture& get();
+	sf::FloatRect getRect(Textures::ID id) const;
 };

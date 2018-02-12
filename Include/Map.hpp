@@ -15,29 +15,23 @@
 #include "Ball.hpp"
 #include "CollisionManager.hpp"
 
-class Map
+class Map : public sf::Drawable
 {
 private:
-	CollisionManager collision;
-	TextureHolder texture;
-	std::vector<std::unique_ptr<Tile>> tiles;
-	std::list<std::unique_ptr<Brick>> bricks;
-	std::unique_ptr<Bar> bar;
-	std::unique_ptr<Ball> ball;
+	TextureHolder texture; 
+	CollisionManager& collision;
 
-	void loadTexture();
-	void buildTheMap();
-	void buildTheBrick();
+	Bar bar;
+	Ball ball;
+	Brick brick;
+	Brick tiles;
+
 	void createBarAndBall();
+	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-	void drawTiles();
-	void drawBricks();
-
-	sf::Vector2f checkCollision();
 public:
 	Map();
 	~Map();
 
-	void draw(sf::RenderWindow& window);
 	void update(const float& deltaTime, const bool& isBallMoving);
 };

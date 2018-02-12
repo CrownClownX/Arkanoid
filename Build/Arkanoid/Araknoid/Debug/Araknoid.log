@@ -1,6 +1,8 @@
-﻿  CollisionManager.cpp
-d:\projekty\gitprojectmain\c++\arkanoid\source\collisionmanager.cpp(28): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-d:\projekty\gitprojectmain\c++\arkanoid\source\collisionmanager.cpp(29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-d:\projekty\gitprojectmain\c++\arkanoid\source\collisionmanager.cpp(20): warning C4715: 'CollisionManager::checkCollison': not all control paths return a value
-  Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Debug\Araknoid.exe
-  Araknoid.vcxproj -> D:\Projekty\GitProjectMain\C++\Arkanoid\Build\Arkanoid\Debug\Araknoid.pdb (Partial PDB)
+﻿  Ball.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Map.cpp
+  GameLoop.cpp
+  Game.cpp
+  Araknoid.vcxproj -> D:\GIT\Arkanoid\Build\Arkanoid\Debug\Araknoid.exe
+  Araknoid.vcxproj -> D:\GIT\Arkanoid\Build\Arkanoid\Debug\Araknoid.pdb (Partial PDB)

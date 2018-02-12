@@ -12,17 +12,26 @@ Game::~Game()
 
 void Game::draw()
 {
-	map.draw(window);
+	window.draw(map);
 }
 
 void Game::eventHandler()
 {
 	if (window.pollEvent(event))
 	{
-		if (event.type == sf::Event::Closed)
+		switch (event.type)
+		{
+		case sf::Event::Closed :
+		{
 			window.close();
-		else if (event.type == sf::Event::MouseButtonPressed)
+			break;
+		}
+		case sf::Event::MouseButtonPressed :
+		{
 			isRoundStarted = true;
+			break;
+		}
+		}
 	}
 
 	if (event.key.code == sf::Keyboard::Escape)

@@ -1,9 +1,15 @@
 #include "..\Include\Ball.hpp"
 
-Ball::Ball(sf::Texture & texture): Collider(texture, 5), velocity(500), moveVector(0, -500)
+Ball::Ball(sf::Texture & texture, const sf::FloatRect& textureData): texture(texture), 
+	velocity(500), moveVector(0, -500)
 {
-	location.x = 630.0f;
-	location.y = 580.0f;
+	sf::Vector2f size(Const_Var::BALL_DATA.width, Const_Var::BALL_DATA.height);
+	sf::Vector2f location(Const_Var::BALL_DATA.left, Const_Var::BALL_DATA.top);
+
+	sprite.setRadius(size.x);
+	sprite.setPosition(location);
+	sprite.setTexture(&texture);
+	sprite.setTextureRect((sf::IntRect)textureData);
 }
 
 Ball::~Ball()
@@ -12,26 +18,27 @@ Ball::~Ball()
 
 void Ball::update(const float& deltaTime, const float& barPosition)
 {
-		moveOnBar(barPosition);
+	float locationX(sprite.getPosition().x);
+	moveOnBar(barPosition, locationX);
+	sprite.setPosition(locationX, sprite.getPosition().y);
 }
 
-void Ball::update(const float& deltaTime, const sf::Vector2f& newVector, const bool& ifBar)
+void Ball::update(const float& deltaTime, const bool& ifBar)
 {
+	sf::Vector2f newVector(1, 1);
+
 	if (ifBar)
 		barVector(newVector);
 	else
 		changeVector(newVector);
 
-		move(deltaTime);
+	sf::Vector2f location(sprite.getPosition());
+
+	move(deltaTime, location);
+	sprite.setPosition(location);
 }
 
-void Ball::draw(sf::RenderWindow & window)
-{
-	sprite->setPosition(location);
-	window.draw(*sprite);
-}
-
-void Ball::move(const float& deltaTime)
+void Ball::move(const float& deltaTime, sf::Vector2f & location)
 {
 	location.y += deltaTime*moveVector.y;
 	location.x += deltaTime*moveVector.x;
@@ -49,8 +56,13 @@ void Ball::barVector(const sf::Vector2f& newVector)
 	moveVector.y = velocity * newVector.y;
 }
 
-void Ball::moveOnBar(const float& barPosition)
+void Ball::draw(sf::RenderTarget & target, sf::RenderStates states) const
 {
-	location.x = barPosition + 70;
+	target.draw(sprite);
+}
+
+void Ball::moveOnBar(const float& barPosition, float & locationX)
+{
+	locationX = barPosition + 70;
 }
 

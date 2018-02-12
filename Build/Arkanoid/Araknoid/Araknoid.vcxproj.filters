@@ -48,9 +48,6 @@
     <ClInclude Include="..\..\..\Include\Map.hpp">
       <Filter>Header Files\Level Map</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Include\Tile.hpp">
-      <Filter>Header Files\Level Map</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Include\Const.h">
       <Filter>Header Files\Const Data</Filter>
     </ClInclude>
@@ -62,9 +59,6 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Include\Ball.hpp">
       <Filter>Header Files\Level Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Include\Collider.hpp">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Include\CollisionManager.hpp">
       <Filter>Header Files</Filter>
@@ -79,9 +73,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Game.cpp">
       <Filter>Source Files\Game State</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Source\Tile.cpp">
-      <Filter>Source Files\Level Map</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\GameState.cpp">
       <Filter>Source Files\Game State</Filter>
@@ -100,9 +91,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Source\Bar.cpp">
       <Filter>Source Files\Level Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Source\Collider.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Source\CollisionManager.cpp">
       <Filter>Source Files</Filter>
